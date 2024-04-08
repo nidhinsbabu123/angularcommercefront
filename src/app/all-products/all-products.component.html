@@ -1,0 +1,67 @@
+
+<app-header></app-header>
+
+<div>
+    <div class="container flex justify-center items-center m-auto shadow-md">
+
+        <a (click)="filter('')" class=" w-28 text-center p-2 m-3 cursor-pointer transition duration-300 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+            <img class="w-20 rounded-md m-auto" src="https://image.shutterstock.com/image-photo/image-260nw-2373403071.jpg" alt="No image">
+            <h4 class="font-bold">All Ptoducts</h4>
+        </a>
+
+        <a (click)="filter('electronics')" class=" w-28 text-center p-2 m-3 cursor-pointer transition duration-300 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+            <img class="w-20 rounded-md m-auto" src="https://feeds.abplive.com/onecms/images/uploaded-images/2022/10/30/9cabeacaf13ae35cef67a86a6f8b2fb51667143402677460_original.jpg" alt="No image">
+            <h4 class="font-bold">Electronics</h4>
+        </a>
+
+        <a (click)="filter('fashion')" class=" w-28 text-center p-2 m-3 cursor-pointer transition duration-300 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+            <img class="w-20 rounded-md m-auto" src="https://www.realsimple.com/thmb/yla86Nr8GjRXe_9IyADQ638gPrg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/fashion-trends-GettyImages-1457816153-d2982e954afe4b42bf5587f087da90d4.jpg" alt="No image">
+            <h4 class="font-bold">Fashion</h4>
+        </a>
+
+        <a (click)="filter('jewelery')" class=" w-28 text-center p-2 m-3 cursor-pointer transition duration-300 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110">
+            <img class="w-20 rounded-md m-auto" src="https://tiimg.tistatic.com/fp/1/008/532/nri-gold-jewellery-213.jpg" alt="No image">
+            <h4 class="font-bold">Jewellry</h4>
+        </a>
+
+    </div>
+</div>
+
+
+<div class=" mt-9 text-center">
+    <div class="text-center">
+        <section class=" text-center">
+            <div class=" text-center">
+                <div class="p-5 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 shadow-xl m-4">
+
+                    
+
+                        <div class=" text-center p-3" *ngFor="let product of filterCategory | filter : searchKey : 'title'" >
+                            <div class="h-[420px] shadow-md rounded-lg mt-8" >
+                                <!-- Product image-->
+                                <img routerLink="/product/view/{{product.id}}" class="card-img-top rounded-t-lg h-3/5 w-full cursor-pointer transition duration-300 ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:rounded-lg hover:shadow-2xl" [src]="product.image"
+                                    alt="..." />
+                                <!-- Product details-->
+                                <div class="card-body p-4 mt-10">
+                                    <div class="text-center">
+                                        <!-- Product name-->
+                                        <h5 class="text-xl font-bold">{{product.title.slice(0,20)}}...</h5>
+                                        <!-- Product price-->
+                                        ${{product.price}}
+                                    </div>
+                                </div>
+                                <!-- Product actions-->
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center"><a class="cursor-pointer bg-red-600 hover:bg-yellow-400 text-white hover:text-black  p-2 rounded-md mt-auto" (click)="addtocart(product)" >Add to cart</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                   
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="w-full lg:h-16 md:h-28 bg-gradient-to-b from-blue-500 to-transparent">
+    <div class="lg:flex lg:justify-between lg:items-center md:flex md:justify-between md:items-center lg:mx-9">
+
+        <div class="mt-2">
+
+            <a class="lg:text-2xl md:text-sm" routerLink=""> <i class="fa-solid fa-cart-plus"></i> <span
+                    class="ms-3 text-red-500 font-bold">Droping Cart</span> </a>
+
+        </div>
+
+        <div class="lg:w-1/2 md:w-full mt-2">
+
+            <div class=" mb-2 lg:mb-0 flex items-center justify-between">
+
+                <div class="lg:w-2/3 md:w-full">
+                    <form class="w-full">
+                        <input name="searchTerm" [(ngModel)]="searchTerm" (keyup)="search($event)"
+                            class="lg:w-full md:w-1/2 sm:w-1/2 rounded-md p-2 focus:outline-offset-2 focus:outline-pink-600/50"
+                            type="text" placeholder="Search All Products Here !!!">
+                    </form>
+                </div>
+
+                <div routerLink="product/cart" class="w-40 flex justify-center items-center">
+                    <button class="h-10 p-2 flex justify-center items-center">
+                        <i class="fa-solid fa-cart-shopping text-xl"></i>
+                        <div class="bg-red-600 text-white text-xs w-3 rounded-full">{{totalItem}}</div>
+                    </button>
+                </div>
+
+                <div class="w-36 ms-2 text-end text-lg">
+                    <a routerLink="user/login" class="cursor-pointer "> <i class="fa-regular fa-user"></i> <span
+                            class="ms-2">Login</span> </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>

@@ -1,0 +1,84 @@
+
+
+<div class="">
+
+    <div>
+        <div class="mainview">
+
+            <div class="loginbody">
+        
+                <div class="max-w-[940px] h-[520px]  border-transparent rounded-xl grid   lg: grid-cols-1 sm:grid-cols-1 md:grid-cols-2 items-center gap-20 mt-14 z-10">
+        
+                    <div class="grid">
+        
+                        <img class="border-transparent rounded-xl shadow-[0_0_10px_theme('colors.black')]"
+                            src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7963.jpg"
+                            alt="No Image">
+        
+                    </div>
+        
+                    <div class="max-w-100 grid gap-5">
+        
+                        <h6 class="text-5xl text-white font-bold">Login</h6>
+                        
+        
+                        <form [formGroup]="loginForm" class="space-y-6" (ngSubmit)="login()">
+                            <div class="relative">
+                                <div
+                                    class="absolute top-1 left-1 text-blue-300 bg-white rounded-md p-2 flex items-center justify-center">
+        
+                                    <i class="fa-solid fa-envelope"></i>
+        
+                                </div>
+        
+                                <input name="email" type="text" placeholder="Email" formControlName="email"
+                                    class="w-5/6 bg-white-light py-2 px-10 rounded-lg focus:bg-slate-700 focus:outline-none focus:ring-1 focus:ring-neon-blue focus:drop-shadow-lg focus:text-white">
+        
+                            </div>
+
+                            <!-- Error Div - Email -->
+
+                            <div *ngIf="this.loginForm.get('email')?.errors && this.loginForm.get('email')?.touched" class="font-semibold text-red-700 mb-3">Invalid Email</div>
+        
+                            <div class="relative">
+                                <div
+                                    class="absolute top-1 left-1 text-blue-300 bg-white-medium rounded-md p-2 flex items-center justify-center">
+        
+                                    <i class="fa-solid fa-lock"></i>
+        
+                                </div>
+        
+                                <input name="password" type="password" placeholder="Password" formControlName="password"
+                                    class="w-5/6 bg-white-light py-2 px-11 rounded-lg focus:bg-black-dark focus:outline-none focus:ring-1 focus:ring-neon-blue focus:drop-shadow-lg">
+        
+                            </div>
+
+                            <!-- Error Div - Password -->
+
+                            <div *ngIf="this.loginForm.get('password')?.errors && this.loginForm.get('password')?.touched" class="font-semibold text-red-700 mb-3">Invalid Password</div>
+        
+        
+        
+                            <button type="submit"
+                                class="bg-blue-500 hover:bg-green-600 w-2/5 font-semibold rounded-md py-2">Log in</button>
+        
+        
+                        </form>
+        
+                        <div class="text-zinc-50 border-t border-white-light pt-4 space-y-4 text-sm">
+                            <p>Don't have an account ? <a routerLink="/user/register" class="text-neon-blue cursor-pointer hover:text-blue-500">Register
+                                    here</a> </p>
+                            <p class="text-neon-blue cursor-pointer hover:text-blue-500">Forgot Password</p>
+        
+                        </div>
+        
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </div>
+    </div>
+
+</div>

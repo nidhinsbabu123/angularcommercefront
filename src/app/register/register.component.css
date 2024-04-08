@@ -1,0 +1,14 @@
+.regbody{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainregview{
+    background-image: radial-gradient(circle at center center, rgb(93, 60, 152),rgb(10, 3, 9));
+    /* background-image: radial-gradient(circle at center center, rgb(12, 57, 236),rgba(255, 255, 255, 0.736)); */
+    height: 1000px;
+    
+    
+}
